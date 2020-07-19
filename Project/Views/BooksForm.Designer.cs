@@ -36,6 +36,8 @@
             this.pageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnNewBook = new System.Windows.Forms.Button();
+            this.txSearchBox = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -94,11 +96,30 @@
             this.btnNewBook.UseVisualStyleBackColor = true;
             this.btnNewBook.Click += new System.EventHandler(this.btnNewBook_Click);
             // 
+            // txSearchBox
+            // 
+            this.txSearchBox.Location = new System.Drawing.Point(244, 494);
+            this.txSearchBox.Name = "txSearchBox";
+            this.txSearchBox.Size = new System.Drawing.Size(181, 20);
+            this.txSearchBox.TabIndex = 2;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(431, 491);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 3;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // BooksForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(530, 572);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txSearchBox);
             this.Controls.Add(this.btnNewBook);
             this.Controls.Add(this.dataGridView1);
             this.Name = "BooksForm";
@@ -106,6 +127,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -118,5 +140,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn authorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn genreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pageDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox txSearchBox;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

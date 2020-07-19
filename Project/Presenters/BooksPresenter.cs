@@ -35,6 +35,18 @@ namespace Project.Presenters
             OpenBookDetailForm(bookViewModel);
         }
 
+        public void SearchClicked(string filter)
+        {
+            FillBooks(filter);
+        }
+
+        private void FillBooks(string filter)
+        {
+            List<Book> books = BookRepository.Instance.GetAllBooks(filter);
+            _currentBooks = GetBookViewModels(books);
+            _view.FillBooks(_currentBooks);
+        }
+
         private void FillBooks()
         {
             List<Book> books = BookRepository.Instance.GetAllBooks();

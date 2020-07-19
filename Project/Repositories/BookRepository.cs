@@ -1,6 +1,7 @@
 ﻿using Project.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Project.Repositories
@@ -47,6 +48,11 @@ namespace Project.Repositories
         public List<Book> GetAllBooks()
         {
             return _books;
+        }
+
+        public List<Book> GetAllBooks(string filter)
+        {
+            return _books.Where(x => x.Author.Contains(filter) || x.Genre.Contains(filter) || x.Name.Contains(filter) || x.Page.ToString().Contains(filter)).ToList();
         }
 
         public void InsertBook(Book book)

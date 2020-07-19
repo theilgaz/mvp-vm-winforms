@@ -38,5 +38,9 @@ namespace Project.Views
             _presenter.AddBookClicked();
         }
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            _presenter.SearchClicked(txSearchBox.Text);
+        }
     }
 }
