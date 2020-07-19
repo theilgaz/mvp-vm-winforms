@@ -40,6 +40,12 @@ namespace Project.Presenters
             FillBooks(filter);
         }
 
+        public void DeleteBookClicked(BookViewModel bookViewModel)
+        {
+            BookRepository.Instance.DeleteBook(bookViewModel.Book);
+            FillBooks();
+        }
+
         private void FillBooks(string filter)
         {
             List<Book> books = BookRepository.Instance.GetAllBooks(filter);

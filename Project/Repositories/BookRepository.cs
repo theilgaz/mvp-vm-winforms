@@ -65,5 +65,10 @@ namespace Project.Repositories
         {
             // Business operations
         }
+
+        public void DeleteBook(Book book)
+        {
+            _books.Remove(book);
+        }
     }
 }

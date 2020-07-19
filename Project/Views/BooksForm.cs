@@ -42,5 +42,12 @@ namespace Project.Views
         {
             _presenter.SearchClicked(txSearchBox.Text);
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var index = dataGridView1.CurrentCell.RowIndex;
+            BookViewModel bvm = dataGridView1.Rows[index].DataBoundItem as BookViewModel;
+            _presenter.DeleteBookClicked(bvm);
+        }
     }
 }
