@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -41,24 +40,23 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
             // 
             this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bookBindingSource, "Name", true));
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this.bookBindingSource, "Enabled", true));
             this.textBox1.Location = new System.Drawing.Point(79, 77);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(184, 20);
             this.textBox1.TabIndex = 0;
             // 
-            // bookBindingSource
-            // 
-            this.bookBindingSource.DataSource = typeof(Project.ViewModels.BookViewModel);
-            // 
             // textBox2
             // 
             this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bookBindingSource, "Author", true));
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this.bookBindingSource, "Enabled", true));
             this.textBox2.Location = new System.Drawing.Point(79, 103);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(184, 20);
@@ -67,6 +65,7 @@
             // textBox3
             // 
             this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bookBindingSource, "Genre", true));
+            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this.bookBindingSource, "Enabled", true));
             this.textBox3.Location = new System.Drawing.Point(79, 129);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(184, 20);
@@ -75,6 +74,7 @@
             // textBox4
             // 
             this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bookBindingSource, "Page", true));
+            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", this.bookBindingSource, "Enabled", true));
             this.textBox4.Location = new System.Drawing.Point(79, 155);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(184, 20);
@@ -147,6 +147,10 @@
             this.label5.Size = new System.Drawing.Size(34, 13);
             this.label5.TabIndex = 10;
             this.label5.Text = "Sayfa";
+            // 
+            // bookBindingSource
+            // 
+            this.bookBindingSource.DataSource = typeof(Project.ViewModels.BookViewModel);
             // 
             // BookDetailForm
             // 
