@@ -46,6 +46,12 @@ namespace Project.Presenters
             FillBooks();
         }
 
+        public void ViewBookClicked(BookViewModel bookViewModel)
+        {
+            bookViewModel.ViewMode = ViewMode.View;
+            OpenBookDetailForm(bookViewModel);
+        }
+
         private void FillBooks(string filter)
         {
             List<Book> books = BookRepository.Instance.GetAllBooks(filter);
