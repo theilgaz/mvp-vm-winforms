@@ -67,13 +67,46 @@ namespace Project.ViewModels
 
         public bool ShowPageValidationError { get; set; }
 
-        public ViewMode ViewMode { get; set; }
+
+        private bool _enabled;
+        public bool Enabled
+        {
+            get { return _enabled; }
+        }
+
+        public bool ReadOnly { get; set; } = false;
+
+        private ViewMode _viewMode;
+        public ViewMode ViewMode
+        {
+            get { return _viewMode; }
+            set
+            {
+                _viewMode = value;
+                switch (_viewMode)
+                {
+                    case ViewMode.Insert:
+                        _enabled = true;
+                        break;
+                    case ViewMode.Update:
+                        _enabled = true;
+                        break;
+                    case ViewMode.View:
+                        _enabled = false;
+                        break;
+                    default:
+                        _enabled = true;
+                        break;
+                };
+            }
+        }
 
     }
 
     public enum ViewMode
     {
         Insert,
-        Update
+        Update,
+        View
     }
 }
