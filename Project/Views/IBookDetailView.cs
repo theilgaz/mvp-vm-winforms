@@ -10,6 +10,7 @@ namespace Project.Views
     public interface IBookDetailView
     {
         void SetCurrentBook(BookViewModel model);
+        
         void ShowError(string message);
         void Close();
     }
